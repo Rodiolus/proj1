@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Документ без названия</title>
+	
+<!-- <style>
+	img {cursor: pointer}
+</style> -->
+	<style>
+		ul{
+			list-style: none;
+			display: flex;
+		}
+		li a {
+			display: block;
+			padding: 16px;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+
+		<!-- // Задача 1
+//		let a=+prompt('Введите а: ');
+//		let b=+prompt('Введите b: ');
+//		let prim = a + b;
+//		switch (prim) {
+//			case 0:
+//			case 1:
+//			case 2:
+//			case 3:
+//				alert ('Мало');
+//				break;
+//			default:
+//				alert ('Много');
+//		}
+		
+		
+        // Задача 2
+//		let i=0;
+//		while (i<3) {
+//			alert("номер " +i+ "!");
+//			i++;
+//		}
+		
+		
+		
+//		let i=0;
+//        do {
+//        alert( i );
+//        i++;
+//        } while (i < 3);
+
+		
+		Задача 3 мой вариант -->
+
+		<!-- <script>
+		for(i=1; i<= 11;i++)
+{
+document.write('<a href="images/' + i + '.jpg"><img src="images/' + i + '.jpg" width="200" height="150" title="Жми!" >');
+}		
+</script> -->
+
+<!-- Задание 3 правильное
+	<div id="pic"></div>
+	<div id="big"></div>
+	
+	<script>
+s='', s1='';
+for (i=1;i<=11; i++) {
+	s+=`<img onclick="bigp(${i})" src="images/${i}.jpg" style="height:150px">`;
+}
+pic.innerHTML=s;
+function bigp(p) {
+	s1=`<img onclick="big.innerHTML=''" src="images/${p}.jpg">`;
+	big.innerHTML=s1;
+}
+	</script> -->
+
+
+	<!-- Задание 4 -->
+	<form name="formMenu">
+<p>Пункты меню: <input type="text" size="50" name="elemMenu" value="Главная, О Компании, Новости"></p>
+<p>Цвет текста: <input type="color" name="fColor" value="#FFFFFF"></p>
+<p>Цвет фона: <input type="color" name="bColor" value="#41AEDC"></p>
+<p>Цвет hover: <input type="color" name="hColor" value="#FD9C10"></p>
+<p><input type="button" name="but" value="Создать меню" onclick="menu()"></p>
+	</form>
+	
+	<style id="myStyle"></style>
+	<p id="myMenu"></p>
+	<div id="big"></div>
+
+	<script>
+		function menu() {
+		elemMenu = formMenu.elemMenu.value;
+		// alert(elemMenu);
+		arrMenu = elemMenu.split(', ');
+		// alert(arrMenu[1])
+
+		fc = formMenu.fColor.value;
+		bc = formMenu.bColor.value;
+		hc = formMenu.hColor.value;
+
+s=''; s1=''; s2=''; mylist='';
+for (i=0;i<arrMenu.length;i++) {
+	s+=`<li onclick="eat(${i})"><a href="#">${arrMenu[i]}</a></li>`;
+	mylist = `<ul>${s}</ul>`;
+}
+s1=`
+    li{background: ${bc}}
+	li a {color: ${fc}; text-decoration: none}
+	a:hover {background: ${hc}}
+`
+myStyle.innerHTML=s1;
+myMenu.innerHTML=mylist;
+formMenu.but.value="Изменить меню";
+		}
+		function eat(p) {
+	s2=`<img onclick="big.innerHTML=''" src="images/${p+1}.png">`;
+	big.innerHTML=s2;
+		}
+		
+
+	</script>
+</body>
+</html>
